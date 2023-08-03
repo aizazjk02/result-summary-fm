@@ -1,0 +1,179 @@
+@forward "./styles/globals";
+
+// utils
+.flex-group {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+body {
+    background: var(--pale-blue);
+    display: grid;
+    place-content: center;
+    
+    @media (min-width:43.75em) {
+        height: 100vh;
+        
+    }
+}
+.container {
+    display: flex;
+    background-color: var(--white);
+    border-radius: var(--border-radius);
+    min-width: 300px;
+    box-shadow: 5px 5px 20px 5px var(--light-lavender);
+    @media (max-width:43.75em) {
+        flex-direction: column;
+    }
+}
+.result {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 50%;
+    border-radius: var(--border-radius);
+    background: linear-gradient(var(--light-slate-blue), var(--light-royal-blue));
+
+    @media (max-width:43.75em) {
+        width: 100%;
+        border-radius: 0 0 var(--border-radius) var(--border-radius);
+    }
+    &__heading {
+        color: var(--light-lavender);
+        font-size: 1.5rem;
+    }
+
+    &__score {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: var(--light-lavender);
+        padding: 2.5rem 3.75rem;
+        border-radius: 100%;
+        background: linear-gradient(var(--violet-blue), var(--persian-blue));
+        span {
+            color: var(--white);
+            font-size: 5rem;
+            font-weight: 900;
+
+            @media (max-width:43.75em) {
+                font-size: 4rem;
+            }
+        }
+    }
+
+    &__rank {
+        text-align: center;
+        padding-inline: 3.75rem;
+        &__grade {
+            color: var(--white);
+            font-size: 1.75rem;
+
+            @media (max-width:43.75em) {
+                font-size: 1.25rem;
+            }
+        }
+        &__description {
+            color: var(--light-lavender);
+            font-size: 1.25rem /* 20px -> 1.25rem */;
+
+            @media (max-width:43.75em) {
+                font-size: 1rem;
+            }
+
+        }
+    }
+}
+
+.summary {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    padding: 2.5rem; 
+    justify-content: center;
+
+    @media (max-width:43.75em) {
+        width: 100%;
+    }
+    &__heading {
+        margin: 0;
+        color: var(--dark-gray-blue);
+        font-weight: 700;
+    }
+    &__item {
+        margin-block: 1.25rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        border-radius: .625rem;
+        &__title {
+            font-weight: 900;
+            font-size: 1.25rem;
+
+            @media (max-width:43.75em) {
+                font-size: 1rem;
+            }
+        }
+
+        &__score {
+            font-weight: 900;
+            color:var(--light-lavender) ;
+            margin-right: 1.25rem;
+            span {
+                color: var(--dark-gray-blue);
+            }
+        }
+
+        &:first-child {
+            background-color: var(--light-red-bg);
+            .summary__item__title {
+                color: var(--light-red);
+
+            }
+        }
+
+        &:nth-child(2) {
+            background-color: var(--orangey-yellow-bg);
+            .summary__item__title {
+                color: var(--orangey-yellow);
+
+            }
+        }
+        &:nth-child(3) {
+            background-color: var(--green-teal-bg);
+            .summary__item__title {
+                color: var(--green-teal);
+
+            }
+        }
+        &:last-child {
+            background-color: var(--cobalt-blue-bg);
+            .summary__item__title {
+                color: var(--cobalt-blue);
+
+            }
+        }
+    }
+}
+
+button {
+    color: var(--white);
+    border: none;
+    border-radius: 6.25rem;
+    background-color: var(--dark-gray-blue);
+    padding: 1.25rem;
+    font-weight: 900;
+    font-size: 1.25rem;
+
+    @media (max-width:43.75em) {
+        font-size: 1rem;
+    }
+
+    &:hover {
+        background: linear-gradient(var(--light-slate-blue), var(--light-royal-blue));
+    }
+}
